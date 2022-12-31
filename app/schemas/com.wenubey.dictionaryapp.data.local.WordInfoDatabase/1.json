@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "dc6385ed3f7c4025aaf99d90cc5d12cf",
+    "identityHash": "6b7f86deab04f2334d0ca3312ff5e668",
     "entities": [
       {
         "tableName": "WordInfoEntity",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`meanings` TEXT NOT NULL, `phonetic` TEXT NOT NULL, `word` TEXT NOT NULL, `id` INTEGER, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`meanings` TEXT NOT NULL, `phonetic` TEXT, `word` TEXT NOT NULL, `id` INTEGER, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "meanings",
@@ -18,7 +18,7 @@
             "fieldPath": "phonetic",
             "columnName": "phonetic",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "word",
@@ -46,7 +46,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'dc6385ed3f7c4025aaf99d90cc5d12cf')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6b7f86deab04f2334d0ca3312ff5e668')"
     ]
   }
 }

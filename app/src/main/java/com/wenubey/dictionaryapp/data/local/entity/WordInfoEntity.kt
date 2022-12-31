@@ -8,7 +8,7 @@ import com.wenubey.dictionaryapp.domain.model.WordInfo
 @Entity
 data class WordInfoEntity(
     val meanings: List<Meaning>,
-    val phonetic: String,
+    val phonetic: String?,
     val word: String,
     @PrimaryKey val id: Int? = null,
 ) {
@@ -16,7 +16,7 @@ data class WordInfoEntity(
         return WordInfo(
             meanings = meanings,
             word = word,
-            phonetic = phonetic
+            phonetic = phonetic ?: ""
         )
     }
 }
